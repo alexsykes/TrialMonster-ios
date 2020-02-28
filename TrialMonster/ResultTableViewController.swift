@@ -26,7 +26,7 @@ class ResultTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("loaded")
+        // print("loaded")
         EventNameLabel.text = trial?.name
         ClubLabel.text = trial?.club
         DateLabel.text = trial?.date
@@ -45,7 +45,7 @@ class ResultTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,7 +62,8 @@ class ResultTableViewController: UITableViewController {
         // Fetches the appropriate trial for the data source layout
         let result = resultsArray[indexPath.row]
         let rider: String! = result.rider
-       // cell.RiderName.text = name
+        let name: String! = result.name
+       cell.NameLabel.text = name
         cell.RiderLabel.text = rider
         
         //MARK: Set colours for alternative rows
@@ -128,7 +129,7 @@ class ResultTableViewController: UITableViewController {
         let task = session.dataTask(with: url)
         { data, response, error in
             if error != nil || data == nil {
-                //  print("Client error!")
+                  print("Client error!")
                 return
             }
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else

@@ -136,24 +136,36 @@
                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                         </stackView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableViewCell" id="1kh-rt-nJf" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="149" width="375" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableViewCell" rowHeight="21" id="1kh-rt-nJf" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="149" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1kh-rt-nJf" id="9CK-WJ-HbW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcn-ht-ap5">
-                                            <rect key="frame" x="16" y="11" width="182" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rider" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcn-ht-ap5">
+                                            <rect key="frame" x="16" y="0.0" width="36" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" name="Text"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZN-gq-UEk">
+                                            <rect key="frame" x="60" y="0.0" width="77.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" name="Text"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="OZN-gq-UEk" firstAttribute="top" secondItem="9CK-WJ-HbW" secondAttribute="top" id="3WL-HY-UH8"/>
+                                        <constraint firstItem="Wcn-ht-ap5" firstAttribute="leading" secondItem="9CK-WJ-HbW" secondAttribute="leadingMargin" id="Wne-OK-Aw3"/>
+                                        <constraint firstItem="OZN-gq-UEk" firstAttribute="leading" secondItem="Wcn-ht-ap5" secondAttribute="trailing" constant="8" symbolic="YES" id="kNI-pi-YTH"/>
+                                        <constraint firstItem="Wcn-ht-ap5" firstAttribute="top" secondItem="9CK-WJ-HbW" secondAttribute="top" id="xa3-VR-3a3"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="Background"/>
                                 <connections>
+                                    <outlet property="NameLabel" destination="OZN-gq-UEk" id="ygv-vW-uUg"/>
                                     <outlet property="RiderLabel" destination="Wcn-ht-ap5" id="a6w-h0-k5g"/>
                                 </connections>
                             </tableViewCell>

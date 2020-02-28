@@ -12,7 +12,7 @@ class ResultTableViewCell: UITableViewCell {
 
     // MARK: Outlets
     @IBOutlet weak var RiderLabel: UILabel!
-    
+    @IBOutlet weak var NameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +24,4 @@ class ResultTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
