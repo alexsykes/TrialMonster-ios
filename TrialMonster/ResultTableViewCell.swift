@@ -13,6 +13,7 @@ class ResultTableViewCell: UITableViewCell {
     // MARK: Outlets
     @IBOutlet weak var RiderLabel: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var ScoreLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

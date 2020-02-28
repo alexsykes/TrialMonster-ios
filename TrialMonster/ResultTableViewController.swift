@@ -63,8 +63,11 @@ class ResultTableViewController: UITableViewController {
         let result = resultsArray[indexPath.row]
         let rider: String! = result.rider
         let name: String! = result.name
-       cell.NameLabel.text = name
+        let scores: String! = result.scores
+        cell.NameLabel.text = name
         cell.RiderLabel.text = rider
+        cell.ScoreLabel.text = scores
+        
         
         //MARK: Set colours for alternative rows
         cell.backgroundColor =  (indexPath.row % 2 == 0 ? UIColor.red.withAlphaComponent(0.05) : UIColor.white)
