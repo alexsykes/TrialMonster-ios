@@ -63,10 +63,23 @@ class ResultTableViewController: UITableViewController {
         let result = resultsArray[indexPath.row]
         let rider: String! = result.rider
         let name: String! = result.name
-        let scores: String! = result.scores
+        let total: String! = result.total
+        let cleans: String! = result.cleans
+        let ones: String! = result.ones
+        let twos: String! = result.twos
+        let threes: String! = result.threes
+        let fives: String! = result.fives
+        let missed: String! = result.missed
+                
         cell.NameLabel.text = name
         cell.RiderLabel.text = rider
-        cell.ScoreLabel.text = scores
+        cell.TotalLabel.text = total
+        cell.CleansLabel.text = cleans
+        cell.OnesLabel.text = ones
+        cell.TwosLabel.text = twos
+        cell.ThreesLabel.text = threes
+        cell.FivesLabel.text = fives
+        cell.MissedLabel.text = missed
         
         
         //MARK: Set colours for alternative rows
