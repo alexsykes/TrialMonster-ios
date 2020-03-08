@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,6 +47,7 @@
 		FA10346F23FECDFD00E6D479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA10347C23FEF59200E6D479 /* TrialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialTableViewCell.swift; sourceTree = "<group>"; };
 		FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialTableViewController.swift; sourceTree = "<group>"; };
+		FAD634B72414F46F00D45DC7 /* TrialMonster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrialMonster.entitlements; sourceTree = "<group>"; };
 		FAEA38442405AF5D0049C254 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FAEA38462405AFA60049C254 /* Trial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trial.swift; sourceTree = "<group>"; };
 		FAEA38482405AFE30049C254 /* CourseCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCount.swift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		FA10345523FECDFB00E6D479 /* TrialMonster */ = {
 			isa = PBXGroup;
 			children = (
+				FAD634B72414F46F00D45DC7 /* TrialMonster.entitlements */,
 				FAEA384A2405B1020049C254 /* Entities */,
 				FA10345623FECDFB00E6D479 /* AppDelegate.swift */,
 				FA10345823FECDFB00E6D479 /* SceneDelegate.swift */,
@@ -186,7 +188,7 @@
 				};
 			};
 			buildConfigurationList = FA10344E23FECDFB00E6D479 /* Build configuration list for PBXProject "TrialMonster" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -399,15 +401,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TrialMonster/TrialMonster.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88UXW8RGH2;
 				INFOPLIST_FILE = TrialMonster/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexsykes.TrialMonster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -417,15 +422,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TrialMonster/TrialMonster.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88UXW8RGH2;
 				INFOPLIST_FILE = TrialMonster/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexsykes.TrialMonster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
