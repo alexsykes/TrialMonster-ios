@@ -16,6 +16,7 @@
 		FA10346E23FECDFD00E6D479 /* TrialMonsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10346D23FECDFD00E6D479 /* TrialMonsterTests.swift */; };
 		FA10347D23FEF59200E6D479 /* TrialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10347C23FEF59200E6D479 /* TrialTableViewCell.swift */; };
 		FA10348123FEF5F200E6D479 /* TrialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */; };
+		FA30713024167DF100991E32 /* ResultTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */; };
 		FAEA38452405AF5D0049C254 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38442405AF5D0049C254 /* Result.swift */; };
 		FAEA38472405AFA60049C254 /* Trial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38462405AFA60049C254 /* Trial.swift */; };
 		FAEA38492405AFE30049C254 /* CourseCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38482405AFE30049C254 /* CourseCount.swift */; };
@@ -47,6 +48,7 @@
 		FA10346F23FECDFD00E6D479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA10347C23FEF59200E6D479 /* TrialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialTableViewCell.swift; sourceTree = "<group>"; };
 		FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialTableViewController.swift; sourceTree = "<group>"; };
+		FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableHeaderCell.swift; sourceTree = "<group>"; };
 		FAD634B72414F46F00D45DC7 /* TrialMonster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrialMonster.entitlements; sourceTree = "<group>"; };
 		FAEA38442405AF5D0049C254 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FAEA38462405AFA60049C254 /* Trial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trial.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				FA10345823FECDFB00E6D479 /* SceneDelegate.swift */,
 				FA10345A23FECDFB00E6D479 /* ViewController.swift */,
 				FAEA384B2405B20A0049C254 /* ResultTableViewCell.swift */,
+				FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */,
 				FA10347C23FEF59200E6D479 /* TrialTableViewCell.swift */,
 				FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */,
 				FAEA384D2405B9F20049C254 /* ResultTableViewController.swift */,
@@ -235,6 +238,7 @@
 				FA10348123FEF5F200E6D479 /* TrialTableViewController.swift in Sources */,
 				FAEA384E2405B9F20049C254 /* ResultTableViewController.swift in Sources */,
 				FA10345B23FECDFB00E6D479 /* ViewController.swift in Sources */,
+				FA30713024167DF100991E32 /* ResultTableHeaderCell.swift in Sources */,
 				FA10345723FECDFB00E6D479 /* AppDelegate.swift in Sources */,
 				FA10347D23FEF59200E6D479 /* TrialTableViewCell.swift in Sources */,
 				FAEA38452405AF5D0049C254 /* Result.swift in Sources */,
