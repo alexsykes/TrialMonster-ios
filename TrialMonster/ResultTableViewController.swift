@@ -16,6 +16,8 @@ class ResultTableViewController: UITableViewController {
     
     var entrantsOnCourseArray: [CourseCount] = []
     var resultsArray: [Result] = []
+    var courses: [String] = []
+    var numSectionsForDisplay: Int = 0
     
     // MARK: Outlets
     @IBOutlet weak var ClubLabel: UILabel!
@@ -25,12 +27,14 @@ class ResultTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // print("loaded")
+        // Get trial data from trial
         EventNameLabel.text = trial?.name
         ClubLabel.text = trial?.club
         DateLabel.text = trial?.date
         VenueLabel.text = trial?.location
+        
+        //courses = trial!.courses
+        numSectionsForDisplay = trial!.courses.count
         
         getTrialResultList()
         
@@ -45,7 +49,7 @@ class ResultTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return numSectionsForDisplay
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
