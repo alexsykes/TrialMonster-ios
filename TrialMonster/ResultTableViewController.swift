@@ -16,6 +16,8 @@ class ResultTableViewController: UITableViewController {
     
     var entrantsOnCourseArray: [CourseCount] = []
     var resultsArray: [Result] = []
+    var courseResultArray: [Result] = []
+    var courseResultsArray: [[Result]] = [[]]
     var courses: [String] = []
     var numSectionsForDisplay: Int = 0
     
@@ -194,15 +196,29 @@ class ResultTableViewController: UITableViewController {
                     self.resultsArray.append((Result(classs: classs, cleans: cleans, course: course, created: created, fives: fives, id: id, machine: machine, missed: missed, name: name, ones: ones, rider: rider, scores: scores, sectionScores: sectionScores, threes: threes, total: total, trialid: trialid, twos: twos) ?? nil)!)
                 }
                 
-                
+                // offset from start of resultsArray
+                var offset: Int = 0
                 for index in 0..<entryCountJSONArray.count {
+                    // Get number of entries on course
                     let entrycount = entryCountJSONArray[index] as! NSDictionary
                     
+                    // Get course details etc
                     let countString: String = entrycount["count"] as! String
                     let count: Int = Int(countString)!
                     let coursename: String = entrycount["coursename"] as! String
                     
+                    // and save
                     self.entrantsOnCourseArray.append(CourseCount(course: coursename, count: count))
+                    
+                    // Empty courseResultArray
+                    self.courseResultArray = []
+                    
+                    // then copy result into array for each course
+                    for _ in 0..<count {
+                        self.courseResultArray.append(self.resultsArray[offset])
+                        offset += 1
+                    }
+                    self.courseResultsArray.append(self.courseResultArray)
                 }
                 
                 DispatchQueue.main.async {
