@@ -218,7 +218,11 @@ class ResultTableViewController: UITableViewController {
                         self.courseResultArray.append(self.resultsArray[offset])
                         offset += 1
                     }
+                    if (self.courseResultArray.count > 0) {
+                        let counter = self.courseResultArray.count
+                        print ("Counter:  \(counter)")
                     self.courseResultsArray.append(self.courseResultArray)
+                    }
                 }
                 
                 DispatchQueue.main.async {
