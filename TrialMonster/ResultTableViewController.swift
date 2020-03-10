@@ -65,26 +65,16 @@ class ResultTableViewController: UITableViewController {
         }
         // Fetches the appropriate trial for the data source layout
         let result = resultsArray[indexPath.row]
-        let rider: String! = result.rider
-        let name: String! = result.name
-        let total: String! = result.total
-        let cleans: String! = result.cleans
-        let ones: String! = result.ones
-        let twos: String! = result.twos
-        let threes: String! = result.threes
-        let fives: String! = result.fives
-        let missed: String! = result.missed
-                
-        cell.NameLabel.text = name
-        cell.RiderLabel.text = rider
-        cell.TotalLabel.text = total
-        cell.CleansLabel.text = cleans
-        cell.OnesLabel.text = ones
-        cell.TwosLabel.text = twos
-        cell.ThreesLabel.text = threes
-        cell.FivesLabel.text = fives
-        cell.MissedLabel.text = missed
-        
+
+        cell.NameLabel.text = result.name
+        cell.RiderLabel.text = result.rider
+        cell.TotalLabel.text = result.total
+        cell.CleansLabel.text = result.cleans
+        cell.OnesLabel.text = result.ones
+        cell.TwosLabel.text = result.twos
+        cell.ThreesLabel.text = result.threes
+        cell.FivesLabel.text = result.fives
+        cell.MissedLabel.text = result.missed
         
         //MARK: Set colours for alternative rows
         cell.backgroundColor =  (indexPath.row % 2 == 0 ? UIColor.red.withAlphaComponent(0.05) : UIColor.white)
