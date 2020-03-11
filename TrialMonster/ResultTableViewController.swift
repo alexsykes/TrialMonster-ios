@@ -11,9 +11,6 @@ import UIKit
 class ResultTableViewController: UITableViewController {
     // MARK: Properties
     var trial: Trial?
-    @IBOutlet var ResultTableView: UITableView!
-    @IBOutlet weak var ResultTableViewCell: ResultTableViewCell!
-    
     var entrantsOnCourseArray: [CourseCount] = []
     var resultsArray: [Result] = []
     var courseResultArray: [Result] = []
@@ -21,11 +18,20 @@ class ResultTableViewController: UITableViewController {
     var courses: [String] = []
     var numSectionsForDisplay: Int = 0
     
+    var sections = [CourseSection]()
+    
+    struct CourseSection {
+        var order: Int
+        var course: String
+    }
+
     // MARK: Outlets
     @IBOutlet weak var ClubLabel: UILabel!
     @IBOutlet weak var EventNameLabel: UILabel!
     @IBOutlet weak var DateLabel: UILabel!
     @IBOutlet weak var VenueLabel: UILabel!
+    @IBOutlet var ResultTableView: UITableView!
+    @IBOutlet weak var ResultTableViewCell: ResultTableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,11 +163,15 @@ class ResultTableViewController: UITableViewController {
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: [])
                 
+                // parse data from server into JSON Array
                 let returnedArray = json as! NSArray
-                // print(json)
+                
+                // Index 0 is array of results
+                // Index 1 is array of course data
                 let resultsJSONArray = returnedArray[0] as! NSArray
                 let entryCountJSONArray = returnedArray[1] as! NSArray
                 
+                // Instantiate Result
                 for index in 0..<resultsJSONArray.count{
                     let result = resultsJSONArray[index] as! NSDictionary
                     
@@ -183,6 +193,7 @@ class ResultTableViewController: UITableViewController {
                     let trialid: String = result["trialid"] as! String
                     let twos: String = result["twos"] as! String
                     
+                    // then add to resultsArray
                     self.resultsArray.append((Result(classs: classs, cleans: cleans, course: course, created: created, fives: fives, id: id, machine: machine, missed: missed, name: name, ones: ones, rider: rider, scores: scores, sectionScores: sectionScores, threes: threes, total: total, trialid: trialid, twos: twos) ?? nil)!)
                 }
                 
@@ -209,17 +220,13 @@ class ResultTableViewController: UITableViewController {
                         offset += 1
                     }
                     if (self.courseResultArray.count > 0) {
-                        let counter = self.courseResultArray.count
-                        print ("Counter:  \(counter)")
                     self.courseResultsArray.append(self.courseResultArray)
                     }
                 }
                 
                 DispatchQueue.main.async {
                     // self.displayData()
-                    
                     self.ResultTableView.reloadData()
-                    
                 }
             } catch {
                 print(error)
@@ -227,5 +234,4 @@ class ResultTableViewController: UITableViewController {
         }
         task.resume()
     }
-    
 }
