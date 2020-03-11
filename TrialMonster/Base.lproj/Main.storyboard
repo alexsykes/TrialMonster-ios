@@ -229,8 +229,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rgs-AM-oWF">
-                                            <rect key="frame" x="0.0" y="7" width="352" height="38.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rgs-AM-oWF">
+                                            <rect key="frame" x="3" y="7" width="352" height="38.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ClassLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHZ-jb-xAW">
                                                     <rect key="frame" x="0.0" y="0.0" width="352" height="20.5"/>
@@ -324,6 +324,10 @@
                                             </constraints>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rgs-AM-oWF" firstAttribute="top" secondItem="oPA-1W-S5A" secondAttribute="top" constant="7" id="j8G-cW-i2D"/>
+                                        <constraint firstAttribute="trailing" secondItem="rgs-AM-oWF" secondAttribute="trailing" constant="20" symbolic="YES" id="rQ5-kL-CMk"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="Background"/>
                                 <connections>
