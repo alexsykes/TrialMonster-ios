@@ -140,7 +140,7 @@ class ResultTableViewController: UITableViewController {
     func getTrialResultList(){
         let session = URLSession.shared
         let trialid = trial!.id
-        let urlBase = "https://android.trialmonster.uk/getJSONDataios.php?id=\(trialid)"
+        let urlBase = "https://ios.trialmonster.uk/getJSONDataios.php?id=\(trialid)"
         let url = URL(string: urlBase)!
         //   print(url.absoluteString)
         

@@ -125,7 +125,7 @@ class TrialTableViewController: UITableViewController {
     // MARK: Get data from webserver
     func getTrialResultList(){
         let session = URLSession.shared
-        let url = URL(string: "https://android.trialmonster.uk/getTrialResultList.php")!
+        let url = URL(string: "https://ios.trialmonster.uk/getTrialResultList.php")!
         let task = session.dataTask(with: url)
         { data, response, error in
             if error != nil || data == nil {
