@@ -43,6 +43,7 @@ class ResultTableViewController: UITableViewController {
         
         //courses = trial!.courses
         numSectionsForDisplay = trial!.courses.count
+        courses = trial!.courses
         
         getTrialResultList()
         
@@ -90,6 +91,10 @@ class ResultTableViewController: UITableViewController {
         return cell
     }
     
+    // Ceate a standard header that includes the returned text
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String {
+        return self.courses[section] // "Header \(section)"
+    }
     
     /*
      // Override to support conditional editing of the table view.
