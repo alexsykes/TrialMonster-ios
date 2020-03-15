@@ -91,11 +91,27 @@ class ResultTableViewController: UITableViewController {
         return cell
     }
     
+    // Added March 15
     // Ceate a standard header that includes the returned text
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String {
         return self.courses[section] // "Header \(section)"
     }
     
+    // Ceate a standard footer that includes the returned text
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String {
+        return self.courses[section] + " ends" // "Footer \(section) - ends"
+    }
+    
+    
+    
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassLabel", for: indexPath)
+        return cell
+    } */
+    
+    
+    // End of additions
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
