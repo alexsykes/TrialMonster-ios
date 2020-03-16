@@ -14,7 +14,7 @@ class ResultTableViewController: UITableViewController {
     var entrantsOnCourseArray: [CourseCount] = []
     var resultsArray: [Result] = []
     var courseResultArray: [Result] = []
-    var courseResultsArray: [[Result]] = [[]]
+    var courseResultsArray =  [[Result]]() //Array of results for populating sections
     var courses: [String] = []
     var numSectionsForDisplay: Int = 0
     
@@ -222,30 +222,29 @@ class ResultTableViewController: UITableViewController {
                 // Reset courseResultsArray
                 self.courseResultsArray.removeAll()
                 // offset from start of resultsArray
+                // self.courseResultsArray.removeAll()
+                
                 var offset: Int = 0
-                for index in 0..<entryCountJSONArray.count {
+                
+                // For each course
+                let numCourses = entryCountJSONArray.count
+                for courseIndex in 0..<numCourses {
+                    var courseResults = [Result]()
                     // Get number of entries on course
-                    let entrycount = entryCountJSONArray[index] as! NSDictionary
+                    let entrycount = entryCountJSONArray[courseIndex] as! NSDictionary
                     
                     // Get course details etc
                     let countString: String = entrycount["count"] as! String
                     let count: Int = Int(countString)!
-                    let coursename: String = entrycount["coursename"] as! String
+                   // let coursename: String = entrycount["coursename"] as! String
                     
-                    // and save
-                    self.entrantsOnCourseArray.append(CourseCount(course: coursename, count: count))
-                    
-                    // Empty courseResultArray
-                    self.courseResultArray = []
-                    
-                    // then copy result into array for each course
                     for _ in 0..<count {
-                        self.courseResultArray.append(self.resultsArray[offset])
-                        offset += 1
+                    // Get each result
+                    let result = self.resultsArray[offset]
+                        courseResults.append(result)
+                    offset += 1
                     }
-                    if (self.courseResultArray.count > 0) {
-                    self.courseResultsArray.append(self.courseResultArray)
-                    }
+                    self.courseResultsArray.append(courseResults)
                 }
                 
                 DispatchQueue.main.async {
