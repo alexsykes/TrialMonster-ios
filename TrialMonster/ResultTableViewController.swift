@@ -11,11 +11,9 @@ import UIKit
 class ResultTableViewController: UITableViewController {
     // MARK: Properties
     var trial: Trial?
-    var entrantsOnCourseArray: [CourseCount] = []
+    
     var resultsArray: [Result] = []
-    var courseResultArray: [Result] = []
-    var courseResultsArray =  [[Result]]() //Array of results for populating sections
-    var courses: [String] = []
+    var coursesArray: [String] = []
     var numSectionsForDisplay: Int = 0
     
     var sections = [CourseSection]()
@@ -44,7 +42,7 @@ class ResultTableViewController: UITableViewController {
         
         //courses = trial!.courses
         numSectionsForDisplay = trial!.courses.count
-        courses = trial!.courses
+        coursesArray = trial!.courses
         
         getTrialResultList()
         
@@ -95,12 +93,12 @@ class ResultTableViewController: UITableViewController {
     // Added March 15
     // Ceate a standard header that includes the returned text
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String {
-        return self.courses[section] // "Header \(section)"
+        return self.coursesArray[section] // "Header \(section)"
     }
     
     // Ceate a standard footer that includes the returned text
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String {
-        return self.courses[section] + " ends" // "Footer \(section) - ends"
+        return self.coursesArray[section] + " ends" // "Footer \(section) - ends"
     }
     
     
@@ -191,7 +189,7 @@ class ResultTableViewController: UITableViewController {
                 // Index 0 is array of results
                 // Index 1 is array of course data
                 let resultsJSONArray = returnedArray[0] as! NSArray
-                let entryCountJSONArray = returnedArray[1] as! NSArray
+                // let entryCountJSONArray = returnedArray[1] as! NSArray
                 
                 // Instantiate Result
                 for index in 0..<resultsJSONArray.count{
@@ -218,34 +216,13 @@ class ResultTableViewController: UITableViewController {
                     // then add to resultsArray
                     self.resultsArray.append((Result(classs: classs, cleans: cleans, course: course, created: created, fives: fives, id: id, machine: machine, missed: missed, name: name, ones: ones, rider: rider, scores: scores, sectionScores: sectionScores, threes: threes, total: total, trialid: trialid, twos: twos) ?? nil)!)
                 }
+              
+                /*
+                 At this point
+                 ** resultsArray contains all results ordered ready for display
+                 ** coursesArray contains ordered array of course names as Strings
+                 */
                 
-                // Reset courseResultsArray
-                self.courseResultsArray.removeAll()
-                // offset from start of resultsArray
-                // self.courseResultsArray.removeAll()
-                
-                var offset: Int = 0
-                
-                // For each course
-                let numCourses = entryCountJSONArray.count
-                for courseIndex in 0..<numCourses {
-                    var courseResults = [Result]()
-                    // Get number of entries on course
-                    let entrycount = entryCountJSONArray[courseIndex] as! NSDictionary
-                    
-                    // Get course details etc
-                    let countString: String = entrycount["count"] as! String
-                    let count: Int = Int(countString)!
-                   // let coursename: String = entrycount["coursename"] as! String
-                    
-                    for _ in 0..<count {
-                    // Get each result
-                    let result = self.resultsArray[offset]
-                        courseResults.append(result)
-                    offset += 1
-                    }
-                    self.courseResultsArray.append(courseResults)
-                }
                 
                 DispatchQueue.main.async {
                     // self.displayData()
