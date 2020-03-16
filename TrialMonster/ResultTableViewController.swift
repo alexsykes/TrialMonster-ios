@@ -35,6 +35,7 @@ class ResultTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Get trial data from trial
         EventNameLabel.text = trial?.name
         ClubLabel.text = trial?.club
@@ -218,6 +219,8 @@ class ResultTableViewController: UITableViewController {
                     self.resultsArray.append((Result(classs: classs, cleans: cleans, course: course, created: created, fives: fives, id: id, machine: machine, missed: missed, name: name, ones: ones, rider: rider, scores: scores, sectionScores: sectionScores, threes: threes, total: total, trialid: trialid, twos: twos) ?? nil)!)
                 }
                 
+                // Reset courseResultsArray
+                self.courseResultsArray.removeAll()
                 // offset from start of resultsArray
                 var offset: Int = 0
                 for index in 0..<entryCountJSONArray.count {
