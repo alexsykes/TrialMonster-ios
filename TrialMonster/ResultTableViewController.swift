@@ -14,7 +14,7 @@ class ResultTableViewController: UITableViewController {
     var entrantsOnCourseArray: [CourseCount] = []
     var resultsArray: [Result] = []
     var courseResultArray: [Result] = []
-    var courseResultsArray: [[Result]] = [[]]
+    var courseResultsArray =  [[Result]]() //Array of results for populating sections
     var courses: [String] = []
     var numSectionsForDisplay: Int = 0
     
@@ -35,6 +35,7 @@ class ResultTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Get trial data from trial
         EventNameLabel.text = trial?.name
         ClubLabel.text = trial?.club
@@ -43,6 +44,7 @@ class ResultTableViewController: UITableViewController {
         
         //courses = trial!.courses
         numSectionsForDisplay = trial!.courses.count
+        courses = trial!.courses
         
         getTrialResultList()
         
@@ -90,7 +92,27 @@ class ResultTableViewController: UITableViewController {
         return cell
     }
     
+    // Added March 15
+    // Ceate a standard header that includes the returned text
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String {
+        return self.courses[section] // "Header \(section)"
+    }
     
+    // Ceate a standard footer that includes the returned text
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String {
+        return self.courses[section] + " ends" // "Footer \(section) - ends"
+    }
+    
+    
+    
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassLabel", for: indexPath)
+        return cell
+    } */
+    
+    
+    // End of additions
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -197,31 +219,32 @@ class ResultTableViewController: UITableViewController {
                     self.resultsArray.append((Result(classs: classs, cleans: cleans, course: course, created: created, fives: fives, id: id, machine: machine, missed: missed, name: name, ones: ones, rider: rider, scores: scores, sectionScores: sectionScores, threes: threes, total: total, trialid: trialid, twos: twos) ?? nil)!)
                 }
                 
+                // Reset courseResultsArray
+                self.courseResultsArray.removeAll()
                 // offset from start of resultsArray
+                // self.courseResultsArray.removeAll()
+                
                 var offset: Int = 0
-                for index in 0..<entryCountJSONArray.count {
+                
+                // For each course
+                let numCourses = entryCountJSONArray.count
+                for courseIndex in 0..<numCourses {
+                    var courseResults = [Result]()
                     // Get number of entries on course
-                    let entrycount = entryCountJSONArray[index] as! NSDictionary
+                    let entrycount = entryCountJSONArray[courseIndex] as! NSDictionary
                     
                     // Get course details etc
                     let countString: String = entrycount["count"] as! String
                     let count: Int = Int(countString)!
-                    let coursename: String = entrycount["coursename"] as! String
+                   // let coursename: String = entrycount["coursename"] as! String
                     
-                    // and save
-                    self.entrantsOnCourseArray.append(CourseCount(course: coursename, count: count))
-                    
-                    // Empty courseResultArray
-                    self.courseResultArray = []
-                    
-                    // then copy result into array for each course
                     for _ in 0..<count {
-                        self.courseResultArray.append(self.resultsArray[offset])
-                        offset += 1
+                    // Get each result
+                    let result = self.resultsArray[offset]
+                        courseResults.append(result)
+                    offset += 1
                     }
-                    if (self.courseResultArray.count > 0) {
-                    self.courseResultsArray.append(self.courseResultArray)
-                    }
+                    self.courseResultsArray.append(courseResults)
                 }
                 
                 DispatchQueue.main.async {
