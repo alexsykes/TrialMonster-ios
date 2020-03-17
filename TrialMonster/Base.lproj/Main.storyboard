@@ -43,7 +43,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Venue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17P-iT-7ms">
-                                            <rect key="frame" x="20" y="69" width="259" height="21"/>
+                                            <rect key="frame" x="16" y="69" width="263" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" name="Text"/>
                                             <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                         <constraint firstAttribute="trailing" secondItem="Ial-S4-FwV" secondAttribute="trailing" constant="16" id="9VN-DD-naX"/>
                                         <constraint firstItem="m0q-dX-1NQ" firstAttribute="leading" secondItem="z3R-59-kuo" secondAttribute="leadingMargin" id="C2w-1q-7Cx"/>
                                         <constraint firstItem="cBp-J6-6NP" firstAttribute="leading" secondItem="m0q-dX-1NQ" secondAttribute="trailing" constant="8" symbolic="YES" id="Dok-Xl-1uO"/>
-                                        <constraint firstItem="17P-iT-7ms" firstAttribute="leading" secondItem="z3R-59-kuo" secondAttribute="leading" constant="20" symbolic="YES" id="E6q-IM-9Q8"/>
+                                        <constraint firstItem="17P-iT-7ms" firstAttribute="leading" secondItem="m0q-dX-1NQ" secondAttribute="leading" id="E6q-IM-9Q8"/>
                                         <constraint firstAttribute="bottom" secondItem="Ial-S4-FwV" secondAttribute="bottom" id="JMe-PA-evA"/>
                                         <constraint firstItem="pOa-wn-6n9" firstAttribute="top" secondItem="m0q-dX-1NQ" secondAttribute="bottom" constant="8" id="Lxd-Hg-FDU"/>
                                         <constraint firstItem="17P-iT-7ms" firstAttribute="top" secondItem="pOa-wn-6n9" secondAttribute="bottom" constant="8" id="PRx-ft-Wem"/>
@@ -137,8 +137,8 @@
                             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                         </stackView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-rt-nJf" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="128" width="375" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-rt-nJf" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="128" width="375" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1kh-rt-nJf" id="9CK-WJ-HbW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
