@@ -17,6 +17,7 @@
 		FA10347D23FEF59200E6D479 /* TrialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10347C23FEF59200E6D479 /* TrialTableViewCell.swift */; };
 		FA10348123FEF5F200E6D479 /* TrialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */; };
 		FA30713024167DF100991E32 /* ResultTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */; };
+		FA9B3AA22421F96000E99A13 /* GroupedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B3AA12421F96000E99A13 /* GroupedSection.swift */; };
 		FAEA38452405AF5D0049C254 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38442405AF5D0049C254 /* Result.swift */; };
 		FAEA38472405AFA60049C254 /* Trial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38462405AFA60049C254 /* Trial.swift */; };
 		FAEA38492405AFE30049C254 /* CourseCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38482405AFE30049C254 /* CourseCount.swift */; };
@@ -50,6 +51,7 @@
 		FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialTableViewController.swift; sourceTree = "<group>"; };
 		FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableHeaderCell.swift; sourceTree = "<group>"; };
 		FA783250241E278B002E701A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = TrialMonster/README.md; sourceTree = SOURCE_ROOT; };
+		FA9B3AA12421F96000E99A13 /* GroupedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedSection.swift; sourceTree = "<group>"; };
 		FAD634B72414F46F00D45DC7 /* TrialMonster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrialMonster.entitlements; sourceTree = "<group>"; };
 		FAEA38442405AF5D0049C254 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		FAEA38462405AFA60049C254 /* Trial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trial.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				FAEA38482405AFE30049C254 /* CourseCount.swift */,
 				FAEA38442405AF5D0049C254 /* Result.swift */,
 				FAEA38462405AFA60049C254 /* Trial.swift */,
+				FA9B3AA12421F96000E99A13 /* GroupedSection.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				FAEA38452405AF5D0049C254 /* Result.swift in Sources */,
 				FAEA38492405AFE30049C254 /* CourseCount.swift in Sources */,
 				FAEA384C2405B20A0049C254 /* ResultTableViewCell.swift in Sources */,
+				FA9B3AA22421F96000E99A13 /* GroupedSection.swift in Sources */,
 				FA10345923FECDFB00E6D479 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

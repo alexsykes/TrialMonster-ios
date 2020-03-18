@@ -17,10 +17,13 @@ class TrialTableViewController: UITableViewController {
     var trials = [Trial]()
     var resultsArray:NSArray = []
     
+    var sections = [GroupedSection<Date, Trial>]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Fetch result data from server
         getTrialResultList()
+        
 
     }
     
@@ -176,6 +179,12 @@ class TrialTableViewController: UITableViewController {
             
         }
        // print(trials.count)
+        //   Added
+       // self.sections = GroupedSection.group(rows: self.trials, by:  $0{"date"} )
+        // self.sections.sort { lhs, rhs in lhs.sectionItem < rhs.sectionItem }
+        
+        
+        // End of added
         TrialTableView.reloadData()
     } 
 }
