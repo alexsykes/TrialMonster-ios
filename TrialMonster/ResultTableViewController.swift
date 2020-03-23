@@ -219,6 +219,7 @@ class ResultTableViewController: UITableViewController {
                     
                 }
                 
+                // See - https://stackoverflow.com/questions/31220002/how-to-group-by-the-elements-of-an-array-in-swift - for Swift 5
                 // Now group results according to course
                 let groups = Dictionary(grouping: self.resultsArray) {$0.course}
                 /*
