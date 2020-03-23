@@ -75,7 +75,7 @@ class ResultTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of ResultTableViewCell")
         }
         // Fetches the appropriate trial for the data source layout
-        let result = self.resultsByCourse[indexPath.row]
+        let result = resultsArray[indexPath.row]
         
         cell.NameLabel.text = result.name
         cell.RiderLabel.text = result.rider
