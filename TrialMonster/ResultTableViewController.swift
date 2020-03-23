@@ -16,6 +16,9 @@ class ResultTableViewController: UITableViewController {
     var coursesArray: [String] = []
     var numSectionsForDisplay: Int = 0
     
+    // Dictionary key->courseName, value->[Result]
+    var resultsByCourse: Dictionary<String, [Result]> = [String: [Result]]()
+    
     var sections = [CourseSection]()
     
     struct CourseSection {
@@ -57,7 +60,7 @@ class ResultTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return numSectionsForDisplay
+        return resultsByCourse.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,7 +75,7 @@ class ResultTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of ResultTableViewCell")
         }
         // Fetches the appropriate trial for the data source layout
-        let result = resultsArray[indexPath.row]
+        let result = self.resultsByCourse[indexPath.row]
         
         cell.NameLabel.text = result.name
         cell.RiderLabel.text = result.rider
@@ -96,10 +99,12 @@ class ResultTableViewController: UITableViewController {
         return self.coursesArray[section] // "Header \(section)"
     }
     
+    /*
     // Ceate a standard footer that includes the returned text
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String {
+     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String {
         return self.coursesArray[section] + " ends" // "Footer \(section) - ends"
     }
+    */
     
     
     
@@ -221,7 +226,7 @@ class ResultTableViewController: UITableViewController {
                 
                 // See - https://stackoverflow.com/questions/31220002/how-to-group-by-the-elements-of-an-array-in-swift - for Swift 5
                 // Now group results according to course
-                let groups = Dictionary(grouping: self.resultsArray) {$0.course}
+                self.resultsByCourse = Dictionary(grouping: self.resultsArray) {$0.course}
                 /*
                  At this point
                  ** resultsArray contains all results ordered ready for display
