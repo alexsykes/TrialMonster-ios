@@ -22,7 +22,7 @@ class ResultTableViewController: UITableViewController {
         var order: Int
         var course: String
     }
-
+    
     // MARK: Outlets
     @IBOutlet weak var ClubLabel: UILabel!
     @IBOutlet weak var EventNameLabel: UILabel!
@@ -73,7 +73,7 @@ class ResultTableViewController: UITableViewController {
         }
         // Fetches the appropriate trial for the data source layout
         let result = resultsArray[indexPath.row]
-
+        
         cell.NameLabel.text = result.name
         cell.RiderLabel.text = result.rider
         cell.TotalLabel.text = result.total
@@ -104,10 +104,10 @@ class ResultTableViewController: UITableViewController {
     
     
     /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassLabel", for: indexPath)
-        return cell
-    } */
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     let cell = tableView.dequeueReusableCell(withIdentifier: "ClassLabel", for: indexPath)
+     return cell
+     } */
     
     
     // End of additions
@@ -167,7 +167,7 @@ class ResultTableViewController: UITableViewController {
         let task = session.dataTask(with: url)
         { data, response, error in
             if error != nil || data == nil {
-                  print("Client error!")
+                print("Client error!")
                 return
             }
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else
@@ -215,12 +215,17 @@ class ResultTableViewController: UITableViewController {
                     
                     // then add to resultsArray
                     self.resultsArray.append((Result(classs: classs, cleans: cleans, course: course, created: created, fives: fives, id: id, machine: machine, missed: missed, name: name, ones: ones, rider: rider, scores: scores, sectionScores: sectionScores, threes: threes, total: total, trialid: trialid, twos: twos) ?? nil)!)
+                    
+                    
                 }
-              
+                
+                // Now group results according to course
+                let groups = Dictionary(grouping: self.resultsArray) {$0.course}
                 /*
                  At this point
                  ** resultsArray contains all results ordered ready for display
                  ** coursesArray contains ordered array of course names as Strings
+                 ** groups contains grouped sets of Results
                  */
                 
                 

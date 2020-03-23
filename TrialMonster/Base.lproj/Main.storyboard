@@ -100,7 +100,7 @@
         <scene sceneID="OyV-40-vYC">
             <objects>
                 <tableViewController id="tmq-CE-MVD" customClass="ResultTableViewController" customModule="TrialMonster" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="02k-od-EZT" userLabel="Result Table View">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="02k-od-EZT" userLabel="Result Table View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -138,7 +138,7 @@
                         </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-rt-nJf" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="128" width="375" height="43"/>
+                                <rect key="frame" x="0.0" y="155.5" width="375" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1kh-rt-nJf" id="9CK-WJ-HbW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -223,7 +223,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableHeaderCell" id="w9C-Cy-Hk2" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="171" width="375" height="43.5"/>
+                                <rect key="frame" x="0.0" y="198.5" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w9C-Cy-Hk2" id="oPA-1W-S5A">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
