@@ -13,11 +13,9 @@ class ResultTableViewController: UITableViewController {
     var trial: Trial?
     
     var resultsArray: [Result] = []
-    var coursesArray: [String] = []
     var numSectionsForDisplay: Int = 0
     
     // New stuff
-    var resultsByCourse: Dictionary<String, [Result]> = [String: [Result]]()
     var sections = [GroupedSection<String, Result>]()
     // ends
     
@@ -43,9 +41,9 @@ class ResultTableViewController: UITableViewController {
         DateLabel.text = trial?.date
         VenueLabel.text = trial?.location
         
-        //courses = trial!.courses
-        numSectionsForDisplay = trial!.courses.count
-        coursesArray = trial!.courses
+        // courses = trial!.courses
+        // numSectionsForDisplay = trial!.courses.count
+       // coursesArray = trial!.courses
         
         getTrialResultList()
         
@@ -223,13 +221,8 @@ class ResultTableViewController: UITableViewController {
                     
                     // then add to resultsArray
                     self.resultsArray.append((Result(classs: classs, cleans: cleans, course: course, created: created, fives: fives, id: id, machine: machine, missed: missed, name: name, ones: ones, rider: rider, scores: scores, sectionScores: sectionScores, threes: threes, total: total, trialid: trialid, twos: twos) ?? nil)!)
-                    
-                    
                 }
                 
-                // See - https://stackoverflow.com/questions/31220002/how-to-group-by-the-elements-of-an-array-in-swift - for Swift 5
-                // Now group results according to course
-                self.resultsByCourse = Dictionary(grouping: self.resultsArray) {$0.course}
                 /*
                  At this point
                  ** resultsArray contains all results ordered ready for display
@@ -237,7 +230,7 @@ class ResultTableViewController: UITableViewController {
                  ** groups contains grouped sets of Results
                  */
 
-                self.resultsByCourse = Dictionary(grouping: self.resultsArray) {$0.course}
+               // self.resultsByCourse = Dictionary(grouping: self.resultsArray) {$0.course}
                 self.sections = GroupedSection.group(rows: self.resultsArray, by: {$0.course})
                 
                 DispatchQueue.main.async {
