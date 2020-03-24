@@ -6,6 +6,10 @@
 //  Copyright © 2020 Alex Sykes. All rights reserved.
 //
 
+// License     https://opensource.org/licenses/MIT
+// License     https://creativecommons.org/publicdomain/zero/1.0/
+// Source      https://www.ralfebert.de/ios-examples/uikit/uitableviewcontroller/grouping-sections/
+
 struct GroupedSection<SectionItem : Hashable, RowItem> {
 
     var sectionItem : SectionItem

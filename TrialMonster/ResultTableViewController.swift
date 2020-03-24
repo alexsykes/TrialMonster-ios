@@ -16,10 +16,10 @@ class ResultTableViewController: UITableViewController {
     var coursesArray: [String] = []
     var numSectionsForDisplay: Int = 0
     
-    // Dictionary key->courseName, value->[Result]
+    // New stuff
     var resultsByCourse: Dictionary<String, [Result]> = [String: [Result]]()
-    
-    var sections = [CourseSection]()
+    var sections = [GroupedSection<String, Result>]()
+    // ends
     
     struct CourseSection {
         var order: Int
@@ -60,12 +60,12 @@ class ResultTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return resultsByCourse.count
+        return self.sections.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return resultsArray.count
+        let section = self.sections[section]
+        return section.rows.count
     }
     
     
@@ -75,7 +75,11 @@ class ResultTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of ResultTableViewCell")
         }
         // Fetches the appropriate trial for the data source layout
-        let result = resultsArray[indexPath.row]
+       // let result = resultsArray[indexPath.row]
+        
+
+        let section = self.sections[indexPath.section]
+        let result = section.rows[indexPath.row]
         
         cell.NameLabel.text = result.name
         cell.RiderLabel.text = result.rider
@@ -94,9 +98,10 @@ class ResultTableViewController: UITableViewController {
     }
     
     // Added March 15
-    // Ceate a standard header that includes the returned text
+  
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String {
-        return self.coursesArray[section] // "Header \(section)"
+        return sections[section].sectionItem
     }
     
     /*
@@ -231,10 +236,11 @@ class ResultTableViewController: UITableViewController {
                  ** coursesArray contains ordered array of course names as Strings
                  ** groups contains grouped sets of Results
                  */
-                
+
+                self.resultsByCourse = Dictionary(grouping: self.resultsArray) {$0.course}
+                self.sections = GroupedSection.group(rows: self.resultsArray, by: {$0.course})
                 
                 DispatchQueue.main.async {
-                    // self.displayData()
                     self.ResultTableView.reloadData()
                 }
             } catch {
