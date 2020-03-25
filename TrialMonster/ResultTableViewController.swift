@@ -14,15 +14,7 @@ class ResultTableViewController: UITableViewController {
     
     var resultsArray: [Result] = []
     var numSectionsForDisplay: Int = 0
-    
-    // New stuff
     var sections = [GroupedSection<String, Result>]()
-    // ends
-    
-    struct CourseSection {
-        var order: Int
-        var course: String
-    }
     
     // MARK: Outlets
     @IBOutlet weak var ClubLabel: UILabel!
@@ -41,17 +33,8 @@ class ResultTableViewController: UITableViewController {
         DateLabel.text = trial?.date
         VenueLabel.text = trial?.location
         
-        // courses = trial!.courses
-        // numSectionsForDisplay = trial!.courses.count
-       // coursesArray = trial!.courses
-        
         getTrialResultList()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     // MARK: - Table view data source
@@ -67,15 +50,21 @@ class ResultTableViewController: UITableViewController {
     }
     
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection  section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell")!
+        return cell
+    }
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "ResultTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ResultTableViewCell else {
             fatalError("The dequeued cell is not an instance of ResultTableViewCell")
         }
         // Fetches the appropriate trial for the data source layout
-       // let result = resultsArray[indexPath.row]
+        // let result = resultsArray[indexPath.row]
         
-
+        
         let section = self.sections[indexPath.section]
         let result = section.rows[indexPath.row]
         
@@ -96,71 +85,11 @@ class ResultTableViewController: UITableViewController {
     }
     
     // Added March 15
-  
+    
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String {
         return sections[section].sectionItem
     }
-    
-    /*
-    // Ceate a standard footer that includes the returned text
-     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String {
-        return self.coursesArray[section] + " ends" // "Footer \(section) - ends"
-    }
-    */
-    
-    /*
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "ClassLabel", for: indexPath)
-     return cell
-     } */
-    
-    
-    // End of additions
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     // MARK: Get data from webserver
     func getTrialResultList(){
@@ -229,8 +158,7 @@ class ResultTableViewController: UITableViewController {
                  ** coursesArray contains ordered array of course names as Strings
                  ** groups contains grouped sets of Results
                  */
-
-               // self.resultsByCourse = Dictionary(grouping: self.resultsArray) {$0.course}
+                
                 self.sections = GroupedSection.group(rows: self.resultsArray, by: {$0.course})
                 
                 DispatchQueue.main.async {

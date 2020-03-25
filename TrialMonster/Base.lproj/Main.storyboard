@@ -100,7 +100,7 @@
         <scene sceneID="OyV-40-vYC">
             <objects>
                 <tableViewController id="tmq-CE-MVD" customClass="ResultTableViewController" customModule="TrialMonster" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="02k-od-EZT" userLabel="Result Table View">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="02k-od-EZT" userLabel="Result Table View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -138,10 +138,10 @@
                         </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-rt-nJf" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="155.5" width="375" height="43"/>
+                                <rect key="frame" x="0.0" y="156" width="375" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1kh-rt-nJf" id="9CK-WJ-HbW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RiderLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="66.5" translatesAutoresizingMaskIntoConstraints="NO" id="at1-B2-XpH">
@@ -223,7 +223,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableHeaderCell" id="w9C-Cy-Hk2" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="198.5" width="375" height="43.5"/>
+                                <rect key="frame" x="0.0" y="199" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w9C-Cy-Hk2" id="oPA-1W-S5A">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -341,6 +341,30 @@
                                     <outlet property="TotalLabel" destination="0nX-cB-ORe" id="GQq-zp-Pi6"/>
                                     <outlet property="TwosLabel" destination="4UI-SD-8Wf" id="Bgc-c7-g2K"/>
                                 </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" id="vdw-ES-3A9" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="242.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vdw-ES-3A9" id="EPI-Yl-fVP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ClassLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmh-7M-2yO">
+                                            <rect key="frame" x="16" y="11.5" width="215" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" name="Text"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qmh-7M-2yO" secondAttribute="bottom" constant="0.5" id="5bc-fD-jJo"/>
+                                        <constraint firstItem="qmh-7M-2yO" firstAttribute="top" secondItem="EPI-Yl-fVP" secondAttribute="topMargin" constant="0.5" id="7Tv-Vu-4ZC"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qmh-7M-2yO" secondAttribute="trailing" constant="128" id="T0y-wJ-KqA"/>
+                                        <constraint firstItem="qmh-7M-2yO" firstAttribute="leading" secondItem="EPI-Yl-fVP" secondAttribute="leadingMargin" id="lgU-1m-VR8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" name="Background"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
