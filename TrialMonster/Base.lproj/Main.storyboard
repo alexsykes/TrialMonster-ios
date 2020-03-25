@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1yr-fF-Ezo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1yr-fF-Ezo">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -138,10 +138,10 @@
                         </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-rt-nJf" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="156" width="375" height="43"/>
+                                <rect key="frame" x="0.0" y="155.5" width="375" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1kh-rt-nJf" id="9CK-WJ-HbW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RiderLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="66.5" translatesAutoresizingMaskIntoConstraints="NO" id="at1-B2-XpH">
@@ -223,7 +223,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableHeaderCell" id="w9C-Cy-Hk2" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="199" width="375" height="43.5"/>
+                                <rect key="frame" x="0.0" y="198.5" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w9C-Cy-Hk2" id="oPA-1W-S5A">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -342,29 +342,43 @@
                                     <outlet property="TwosLabel" destination="4UI-SD-8Wf" id="Bgc-c7-g2K"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" id="vdw-ES-3A9" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="242.5" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" id="vdw-ES-3A9" customClass="HeaderTableViewCell" customModule="TrialMonster" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="242" width="375" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vdw-ES-3A9" id="EPI-Yl-fVP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ClassLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmh-7M-2yO">
-                                            <rect key="frame" x="16" y="11.5" width="215" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWi-gU-fMD">
+                                            <rect key="frame" x="16" y="11" width="343" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ClassLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1u-Hg-zE0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="b1u-Hg-zE0" firstAttribute="leading" secondItem="PWi-gU-fMD" secondAttribute="leading" id="2Hj-8z-fI3"/>
+                                                <constraint firstAttribute="trailing" secondItem="b1u-Hg-zE0" secondAttribute="trailing" id="5cK-nn-wqq"/>
+                                                <constraint firstAttribute="bottom" secondItem="b1u-Hg-zE0" secondAttribute="bottom" id="FbH-9E-WT7"/>
+                                                <constraint firstItem="b1u-Hg-zE0" firstAttribute="top" secondItem="PWi-gU-fMD" secondAttribute="top" id="oXG-rA-yGo"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
                                     <color key="backgroundColor" name="Text"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="qmh-7M-2yO" secondAttribute="bottom" constant="0.5" id="5bc-fD-jJo"/>
-                                        <constraint firstItem="qmh-7M-2yO" firstAttribute="top" secondItem="EPI-Yl-fVP" secondAttribute="topMargin" constant="0.5" id="7Tv-Vu-4ZC"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="qmh-7M-2yO" secondAttribute="trailing" constant="128" id="T0y-wJ-KqA"/>
-                                        <constraint firstItem="qmh-7M-2yO" firstAttribute="leading" secondItem="EPI-Yl-fVP" secondAttribute="leadingMargin" id="lgU-1m-VR8"/>
+                                        <constraint firstItem="PWi-gU-fMD" firstAttribute="top" secondItem="EPI-Yl-fVP" secondAttribute="topMargin" id="FWk-Qt-lhF"/>
+                                        <constraint firstItem="PWi-gU-fMD" firstAttribute="bottom" secondItem="EPI-Yl-fVP" secondAttribute="bottomMargin" id="GUN-j0-FdO"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="PWi-gU-fMD" secondAttribute="trailing" id="oKQ-AS-a6B"/>
+                                        <constraint firstItem="PWi-gU-fMD" firstAttribute="leading" secondItem="EPI-Yl-fVP" secondAttribute="leadingMargin" id="pr2-jf-Y7G"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" name="Background"/>
+                                <connections>
+                                    <outlet property="classLabel" destination="b1u-Hg-zE0" id="Rtf-L1-pK2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

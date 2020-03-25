@@ -51,8 +51,10 @@ class ResultTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection  section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell")!
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell")as! HeaderTableViewCell
+       let  course = sections[section].sectionItem
+        cell.setup(course: course)
+        return cell.contentView
     }
     
     
