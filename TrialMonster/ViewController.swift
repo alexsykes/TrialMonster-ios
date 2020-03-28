@@ -90,7 +90,9 @@ class ViewController: UIViewController {
                     let trialid: String = result["trialid"] as! String
                     let twos: String = result["twos"] as! String
                     
-                    self.resultsArray.append((Result(classs: classs, cleans: cleans, course: course, created: created, fives: fives, id: id, machine: machine, missed: missed, name: name, ones: ones, rider: rider, scores: scores, sectionScores: sectionScores, threes: threes, total: total, trialid: trialid, twos: twos) ?? nil)!)
+                    let courseIndex: Int = -999
+                    
+                    self.resultsArray.append((Result(classs: classs, cleans: cleans, course: course, created: created, fives: fives, id: id, machine: machine, missed: missed, name: name, ones: ones, rider: rider, scores: scores, sectionScores: sectionScores, threes: threes, total: total, trialid: trialid, twos: twos, courseIndex: courseIndex) ?? nil)!)
                 }
                 
                 

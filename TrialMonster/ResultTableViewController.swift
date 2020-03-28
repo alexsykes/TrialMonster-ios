@@ -15,6 +15,7 @@ class ResultTableViewController: UITableViewController {
     var resultsArray: [Result] = []
     var numSectionsForDisplay: Int = 0
     var sections = [GroupedSection<String, Result>]()
+    var courseArray: [String] = []
     
     // MARK: Outlets
     @IBOutlet weak var ClubLabel: UILabel!
@@ -32,6 +33,7 @@ class ResultTableViewController: UITableViewController {
         ClubLabel.text = trial?.club
         DateLabel.text = trial?.date
         VenueLabel.text = trial?.location
+        courseArray = trial!.courses
         
         getTrialResultList()
         
@@ -150,8 +152,12 @@ class ResultTableViewController: UITableViewController {
                     let trialid: String = result["trialid"] as! String
                     let twos: String = result["twos"] as! String
                     
+                    // Get courseIndex for courseArray and course
+                    
+                    let courseIndex: Int  = self.courseArray.firstIndex(of: course)! as Int
+                    
                     // then add to resultsArray
-                    self.resultsArray.append((Result(classs: classs, cleans: cleans, course: course, created: created, fives: fives, id: id, machine: machine, missed: missed, name: name, ones: ones, rider: rider, scores: scores, sectionScores: sectionScores, threes: threes, total: total, trialid: trialid, twos: twos) ?? nil)!)
+                    self.resultsArray.append((Result(classs: classs, cleans: cleans, course: course, created: created, fives: fives, id: id, machine: machine, missed: missed, name: name, ones: ones, rider: rider, scores: scores, sectionScores: sectionScores, threes: threes, total: total, trialid: trialid, twos: twos, courseIndex: courseIndex) ?? nil)!)
                 }
                 
                 /*
