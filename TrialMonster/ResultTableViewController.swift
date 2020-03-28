@@ -15,7 +15,7 @@ class ResultTableViewController: UITableViewController {
     var resultsArray: [Result] = []
     var numSectionsForDisplay: Int = 0
     var sections = [GroupedSection<String, Result>]()
-    var sortedSections = [GroupedSection<String, Result>]()
+   // var sortedSections = [GroupedSection<String, Result>]()
     var courseArray: [String] = []
     
     // MARK: Outlets
@@ -28,14 +28,13 @@ class ResultTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //  navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
         // Get trial data from trial
         EventNameLabel.text = trial?.name
         ClubLabel.text = trial?.club
         DateLabel.text = trial?.date
         VenueLabel.text = trial?.location
         courseArray = trial!.courses
-        
         getTrialResultList()
         
     }
@@ -157,7 +156,6 @@ class ResultTableViewController: UITableViewController {
                     let twos: String = result["twos"] as! String
                     
                     // Get courseIndex for courseArray and course
-                    
                     let courseIndex: Int  = self.courseArray.firstIndex(of: course)! as Int
                     
                     // then add to resultsArray
@@ -174,9 +172,7 @@ class ResultTableViewController: UITableViewController {
                 self.sections = GroupedSection.group(rows: self.resultsArray, by: {$0.courseString})
                 
                 // Sort into course order
-                // self.sections = self.sections.sorted { $0.sectionItem < $1.sectionItem }
                 self.sections.sort { $0.sectionItem < $1.sectionItem }
-                // self.sortedSections = Array(sections.keys).sorted(<)
                 DispatchQueue.main.async {
                     self.ResultTableView.reloadData()
                 }
@@ -185,5 +181,25 @@ class ResultTableViewController: UITableViewController {
             }
         }
         task.resume()
+    }
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        guard let ResultDetailViewController = segue.destination as? ResultDetailViewController else {
+            fatalError("Unexpected destination: \(segue.destination)")
+        }
+        
+        guard let selectedResultCell = sender as? ResultTableViewCell else {
+            fatalError("Unexpected sender: \(String(describing: sender))")
+        }
+        
+        guard let indexPath = tableView.indexPath(for: selectedResultCell) else {
+            fatalError("The selected cell is not being displayed by the table")
+        }
+        let section = self.sections[indexPath.section]
+        let result = section.rows[indexPath.row]
+        ResultDetailViewController.result = result
+        ResultDetailViewController.trial = trial
     }
 }

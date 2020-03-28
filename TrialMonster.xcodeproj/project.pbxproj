@@ -24,6 +24,7 @@
 		FAEA38492405AFE30049C254 /* CourseCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38482405AFE30049C254 /* CourseCount.swift */; };
 		FAEA384C2405B20A0049C254 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA384B2405B20A0049C254 /* ResultTableViewCell.swift */; };
 		FAEA384E2405B9F20049C254 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA384D2405B9F20049C254 /* ResultTableViewController.swift */; };
+		FAFD42A6242F59C700D4D307 /* ResultDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD42A5242F59C700D4D307 /* ResultDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		FAEA38482405AFE30049C254 /* CourseCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCount.swift; sourceTree = "<group>"; };
 		FAEA384B2405B20A0049C254 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		FAEA384D2405B9F20049C254 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		FAFD42A5242F59C700D4D307 /* ResultDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				FA10345A23FECDFB00E6D479 /* ViewController.swift */,
 				FA10347C23FEF59200E6D479 /* TrialTableViewCell.swift */,
 				FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */,
+				FAFD42A5242F59C700D4D307 /* ResultDetailViewController.swift */,
 				FAEA384D2405B9F20049C254 /* ResultTableViewController.swift */,
 				FAEA384B2405B20A0049C254 /* ResultTableViewCell.swift */,
 				FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */,
@@ -244,6 +247,7 @@
 			files = (
 				FAEA38472405AFA60049C254 /* Trial.swift in Sources */,
 				FA10348123FEF5F200E6D479 /* TrialTableViewController.swift in Sources */,
+				FAFD42A6242F59C700D4D307 /* ResultDetailViewController.swift in Sources */,
 				FAEA384E2405B9F20049C254 /* ResultTableViewController.swift in Sources */,
 				FA10345B23FECDFB00E6D479 /* ViewController.swift in Sources */,
 				FA30713024167DF100991E32 /* ResultTableHeaderCell.swift in Sources */,
