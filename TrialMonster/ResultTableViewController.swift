@@ -15,6 +15,7 @@ class ResultTableViewController: UITableViewController {
     var resultsArray: [Result] = []
     var numSectionsForDisplay: Int = 0
     var sections = [GroupedSection<String, Result>]()
+    var sortedSections = [GroupedSection<String, Result>]()
     var courseArray: [String] = []
     
     // MARK: Outlets
@@ -54,8 +55,11 @@ class ResultTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection  section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell")as! HeaderTableViewCell
-       let  course = sections[section].sectionItem
-        cell.setup(course: course)
+        let course = sections[section].sectionItem
+        let courseIndex: Int = Int(course)!
+        let courseName: String = courseArray[courseIndex]
+        cell.setup(course: courseName)
+        
         return cell.contentView
     }
     
@@ -167,8 +171,12 @@ class ResultTableViewController: UITableViewController {
                  ** groups contains grouped sets of Results
                  */
                 
-                self.sections = GroupedSection.group(rows: self.resultsArray, by: {$0.course})
+                self.sections = GroupedSection.group(rows: self.resultsArray, by: {$0.courseString})
                 
+                // Sort into course order
+                // self.sections = self.sections.sorted { $0.sectionItem < $1.sectionItem }
+                self.sections.sort { $0.sectionItem < $1.sectionItem }
+                // self.sortedSections = Array(sections.keys).sorted(<)
                 DispatchQueue.main.async {
                     self.ResultTableView.reloadData()
                 }

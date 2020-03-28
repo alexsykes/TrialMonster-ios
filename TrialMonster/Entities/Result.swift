@@ -29,6 +29,7 @@ class Result: NSObject {
     var trialid: String
     var twos: String
     var courseIndex: Int
+    var courseString : String
 
     // MARK: Initialisation
     init?(classs: String, cleans: String, course: String , created: String, fives: String, id: String, machine: String, missed: String,
@@ -51,6 +52,7 @@ class Result: NSObject {
         self.trialid = trialid
         self.twos = twos
         self.courseIndex = courseIndex
+        self.courseString = String(courseIndex)
     }
     
 }
