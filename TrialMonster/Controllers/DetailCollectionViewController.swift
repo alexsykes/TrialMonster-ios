@@ -15,10 +15,26 @@ class DetailCollectionViewController: UICollectionViewController {
     
     var result: Result?
     var trial: Trial?
+    var scores: String?
+    var numTrialSections: Int?
+    var numLaps: Int?
+    
+    var sectionScores: [SectionScores] = []
+    
+    struct SectionScores {
+        var section: Int!
+        var scores: String!
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        scores = result?.sectionscores
+        numTrialSections = trial?.numsections
+        numLaps = trial?.numlaps
+        
+        let sectionScores = scores?.split(by: numLaps!)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -48,7 +64,7 @@ class DetailCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return 12
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -89,5 +105,23 @@ class DetailCollectionViewController: UICollectionViewController {
     
     }
     */
+    
 
+
+
+// Added from https://stackoverflow.com/questions/32212220/how-to-split-a-string-into-substrings-of-equal-length#38980231
+}
+extension String {
+    func split(by length: Int) -> [String] {
+        var startIndex = self.startIndex
+        var results = [Substring]()
+
+        while startIndex < self.endIndex {
+            let endIndex = self.index(startIndex, offsetBy: length, limitedBy: self.endIndex) ?? self.endIndex
+            results.append(self[startIndex..<endIndex])
+            startIndex = endIndex
+        }
+
+        return results.map { String($0) }
+    }
 }

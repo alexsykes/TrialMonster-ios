@@ -5,6 +5,9 @@
 //  Created by Alex on 25/03/2020.
 //  Copyright © 2020 Alex Sykes. All rights reserved.
 //
+/*
+    Cell contains classLabel only
+ */
 
 import UIKit
 

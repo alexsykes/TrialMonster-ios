@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FA10345723FECDFB00E6D479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10345623FECDFB00E6D479 /* AppDelegate.swift */; };
 		FA10345923FECDFB00E6D479 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10345823FECDFB00E6D479 /* SceneDelegate.swift */; };
-		FA10345B23FECDFB00E6D479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10345A23FECDFB00E6D479 /* ViewController.swift */; };
 		FA10345E23FECDFB00E6D479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA10345C23FECDFB00E6D479 /* Main.storyboard */; };
 		FA10346023FECDFD00E6D479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA10345F23FECDFD00E6D479 /* Assets.xcassets */; };
 		FA10346323FECDFD00E6D479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA10346123FECDFD00E6D479 /* LaunchScreen.storyboard */; };
@@ -42,7 +41,6 @@
 		FA10345323FECDFB00E6D479 /* TrialMonster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrialMonster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA10345623FECDFB00E6D479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA10345823FECDFB00E6D479 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA10345A23FECDFB00E6D479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA10345D23FECDFB00E6D479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA10345F23FECDFD00E6D479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA10346223FECDFD00E6D479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,20 +103,13 @@
 		FA10345523FECDFB00E6D479 /* TrialMonster */ = {
 			isa = PBXGroup;
 			children = (
+				FA76983B242FC2C200EFEEA2 /* Cells */,
+				FA76983A242FC28E00EFEEA2 /* Controllers */,
 				FAD634B72414F46F00D45DC7 /* TrialMonster.entitlements */,
 				FAEA384A2405B1020049C254 /* Entities */,
 				FA10345623FECDFB00E6D479 /* AppDelegate.swift */,
 				FA10345823FECDFB00E6D479 /* SceneDelegate.swift */,
-				FA10345A23FECDFB00E6D479 /* ViewController.swift */,
-				FA10347C23FEF59200E6D479 /* TrialTableViewCell.swift */,
-				FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */,
-				FAFD42A5242F59C700D4D307 /* ResultDetailViewController.swift */,
-				FAEA384D2405B9F20049C254 /* ResultTableViewController.swift */,
-				FAEA384B2405B20A0049C254 /* ResultTableViewCell.swift */,
-				FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */,
-				FA6B26BA242B797600A7A2D8 /* HeaderTableViewCell.swift */,
 				FA10345C23FECDFB00E6D479 /* Main.storyboard */,
-				FA769838242FC15100EFEEA2 /* DetailCollectionViewController.swift */,
 				FA10345F23FECDFD00E6D479 /* Assets.xcassets */,
 				FA10346123FECDFD00E6D479 /* LaunchScreen.storyboard */,
 				FA10346423FECDFD00E6D479 /* Info.plist */,
@@ -134,6 +125,28 @@
 				FA10346F23FECDFD00E6D479 /* Info.plist */,
 			);
 			path = TrialMonsterTests;
+			sourceTree = "<group>";
+		};
+		FA76983A242FC28E00EFEEA2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA769838242FC15100EFEEA2 /* DetailCollectionViewController.swift */,
+				FAFD42A5242F59C700D4D307 /* ResultDetailViewController.swift */,
+				FAEA384D2405B9F20049C254 /* ResultTableViewController.swift */,
+				FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA76983B242FC2C200EFEEA2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA10347C23FEF59200E6D479 /* TrialTableViewCell.swift */,
+				FAEA384B2405B20A0049C254 /* ResultTableViewCell.swift */,
+				FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */,
+				FA6B26BA242B797600A7A2D8 /* HeaderTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		FAEA384A2405B1020049C254 /* Entities */ = {
@@ -252,7 +265,6 @@
 				FA10348123FEF5F200E6D479 /* TrialTableViewController.swift in Sources */,
 				FAFD42A6242F59C700D4D307 /* ResultDetailViewController.swift in Sources */,
 				FAEA384E2405B9F20049C254 /* ResultTableViewController.swift in Sources */,
-				FA10345B23FECDFB00E6D479 /* ViewController.swift in Sources */,
 				FA30713024167DF100991E32 /* ResultTableHeaderCell.swift in Sources */,
 				FA769839242FC15200EFEEA2 /* DetailCollectionViewController.swift in Sources */,
 				FA10345723FECDFB00E6D479 /* AppDelegate.swift in Sources */,
