@@ -182,11 +182,33 @@ class ResultTableViewController: UITableViewController {
         }
         task.resume()
     }
+//    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender: sender)
+//
+//        guard let ResultDetailViewController = segue.destination as? ResultDetailViewController else {
+//            fatalError("Unexpected destination: \(segue.destination)")
+//        }
+//
+//        guard let selectedResultCell = sender as? ResultTableViewCell else {
+//            fatalError("Unexpected sender: \(String(describing: sender))")
+//        }
+//
+//        guard let indexPath = tableView.indexPath(for: selectedResultCell) else {
+//            fatalError("The selected cell is not being displayed by the table")
+//        }
+//        let section = self.sections[indexPath.section]
+//        let result = section.rows[indexPath.row]
+//        ResultDetailViewController.result = result
+//        ResultDetailViewController.trial = trial
+//    }
+    
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        guard let ResultDetailViewController = segue.destination as? ResultDetailViewController else {
+        guard let DetailCollectionViewController = segue.destination as? DetailCollectionViewController else {
             fatalError("Unexpected destination: \(segue.destination)")
         }
         
@@ -199,7 +221,7 @@ class ResultTableViewController: UITableViewController {
         }
         let section = self.sections[indexPath.section]
         let result = section.rows[indexPath.row]
-        ResultDetailViewController.result = result
-        ResultDetailViewController.trial = trial
+        DetailCollectionViewController.result = result
+        DetailCollectionViewController.trial = trial
     }
 }

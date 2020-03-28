@@ -18,6 +18,7 @@
 		FA10348123FEF5F200E6D479 /* TrialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */; };
 		FA30713024167DF100991E32 /* ResultTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */; };
 		FA6B26BB242B797600A7A2D8 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B26BA242B797600A7A2D8 /* HeaderTableViewCell.swift */; };
+		FA769839242FC15200EFEEA2 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA769838242FC15100EFEEA2 /* DetailCollectionViewController.swift */; };
 		FA9B3AA22421F96000E99A13 /* GroupedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B3AA12421F96000E99A13 /* GroupedSection.swift */; };
 		FAEA38452405AF5D0049C254 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38442405AF5D0049C254 /* Result.swift */; };
 		FAEA38472405AFA60049C254 /* Trial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38462405AFA60049C254 /* Trial.swift */; };
@@ -53,6 +54,7 @@
 		FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialTableViewController.swift; sourceTree = "<group>"; };
 		FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableHeaderCell.swift; sourceTree = "<group>"; };
 		FA6B26BA242B797600A7A2D8 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		FA769838242FC15100EFEEA2 /* DetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewController.swift; sourceTree = "<group>"; };
 		FA783250241E278B002E701A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = TrialMonster/README.md; sourceTree = SOURCE_ROOT; };
 		FA9B3AA12421F96000E99A13 /* GroupedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedSection.swift; sourceTree = "<group>"; };
 		FAD634B72414F46F00D45DC7 /* TrialMonster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrialMonster.entitlements; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */,
 				FA6B26BA242B797600A7A2D8 /* HeaderTableViewCell.swift */,
 				FA10345C23FECDFB00E6D479 /* Main.storyboard */,
+				FA769838242FC15100EFEEA2 /* DetailCollectionViewController.swift */,
 				FA10345F23FECDFD00E6D479 /* Assets.xcassets */,
 				FA10346123FECDFD00E6D479 /* LaunchScreen.storyboard */,
 				FA10346423FECDFD00E6D479 /* Info.plist */,
@@ -251,6 +254,7 @@
 				FAEA384E2405B9F20049C254 /* ResultTableViewController.swift in Sources */,
 				FA10345B23FECDFB00E6D479 /* ViewController.swift in Sources */,
 				FA30713024167DF100991E32 /* ResultTableHeaderCell.swift in Sources */,
+				FA769839242FC15200EFEEA2 /* DetailCollectionViewController.swift in Sources */,
 				FA10345723FECDFB00E6D479 /* AppDelegate.swift in Sources */,
 				FA10347D23FEF59200E6D479 /* TrialTableViewCell.swift in Sources */,
 				FA6B26BB242B797600A7A2D8 /* HeaderTableViewCell.swift in Sources */,
