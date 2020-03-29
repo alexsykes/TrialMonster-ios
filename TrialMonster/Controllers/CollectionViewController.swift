@@ -13,8 +13,18 @@ private let reuseIdentifier = "Cell"
 class CollectionViewController: UICollectionViewController {
 
     var modelData = ["Alex", "Hanan","Laura","Emily"]
+    var result: Result!
+    var trial: Trial!
+    var numLaps: Int!
+    var numSections: Int!
+    var section: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       numSections = trial.numsections
+        numLaps = trial.numlaps
+        section = 0
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,23 +48,22 @@ class CollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return modelData.count
+        return numSections
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        section += 1
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
         // Configure the cell
         
             if let label = cell.viewWithTag(100) as? UILabel {
-                label.text = modelData[indexPath.row]
+                label.text = "Section: \(section ?? 1)"
             }
             
                 if let label2 = cell.viewWithTag(101) as? UILabel {

@@ -221,8 +221,8 @@ class ResultTableViewController: UITableViewController {
         }
         let section = self.sections[indexPath.section]
         let result = section.rows[indexPath.row]
-   //    DetailCollectionViewController.result = result
-   //     DetailCollectionViewController.trial = trial
+   CollectionViewController.result = result
+       CollectionViewController.trial = trial
  
     }
 }
