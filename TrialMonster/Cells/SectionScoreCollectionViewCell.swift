@@ -9,14 +9,10 @@
 import UIKit
 
 class SectionScoreCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var sectionNumberLabel: UILabel!
-    @IBOutlet weak var sectionScoresLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        sectionNumberLabel.text = "One"
-        sectionScoresLabel.text = "0123"
     }
     
     

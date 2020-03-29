@@ -12,7 +12,7 @@ class DetailCollectionViewController: UICollectionViewController {
     @IBOutlet weak var courseLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    let reuseIdentifier = "SectionScoreCell"
+    let reuseIdentifier = "SectionScoreCollectionViewCell"
     var result: Result?
     var trial: Trial?
     var scores: String?
@@ -70,15 +70,15 @@ class DetailCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> SectionScoreCollectionViewCell {
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)as? SectionScoreCollectionViewCell)!
-                let  number = "2"
-        let scores = "0111"
-    //    cell.setup(section: number, score: scores)
-        
-        
-        //   let scoreString: String = sectionScoreArray[indexPath.row]
-          cell.sectionScoresLabel.text = scores
+
         // Configure the cell
-        
+        if let label1 = cell.viewWithTag(1) as? UILabel {
+            label1.text = "Success"
+        }
+        if let label2 = cell.viewWithTag(2) as? UILabel {
+            label2.text = "Success again"
+        }
+        cell.backgroundColor = .lightGray
         return cell
     }
     
