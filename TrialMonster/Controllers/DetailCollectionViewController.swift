@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "SectionScoreCell"
 
 class DetailCollectionViewController: UICollectionViewController {
     @IBOutlet weak var courseLabel: UILabel!
@@ -22,6 +22,7 @@ class DetailCollectionViewController: UICollectionViewController {
     var numLaps: Int?
     
     var sectionScores: [SectionScores] = []
+    var sectionScoreArray: [String] = []
     
     struct SectionScores {
         var section: Int!
@@ -35,7 +36,7 @@ class DetailCollectionViewController: UICollectionViewController {
         numTrialSections = trial?.numsections
         numLaps = trial?.numlaps
         
-       // let sectionScores = scores?.split(by: numLaps!)
+        sectionScoreArray = scores!.split(by: numLaps!)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -60,18 +61,20 @@ class DetailCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 12
+        return sectionScoreArray.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
     
+        let scoreString: String = sectionScoreArray[indexPath.row]
+
         // Configure the cell
     
         return cell
