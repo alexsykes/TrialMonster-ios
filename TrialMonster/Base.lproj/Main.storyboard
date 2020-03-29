@@ -500,7 +500,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionScoreCell" id="7cc-lW-fDH">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionScoreCell" id="7cc-lW-fDH" customClass="SectionScoreCollectionViewCell" customModule="TrialMonster" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="161" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uUu-yF-uc0">
@@ -529,9 +529,8 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
-                                    <outlet property="sectionLabel" destination="Ley-2V-XZL" id="1hg-jp-hDp"/>
-                                    <outlet property="sectionScoreCell" destination="ZLh-0r-tYi" id="uDE-rn-h1W"/>
-                                    <outlet property="sectionScoreLabel" destination="ZLh-0r-tYi" id="x5Q-m0-L8c"/>
+                                    <outlet property="sectionNumberLabel" destination="Ley-2V-XZL" id="RJK-xK-xPw"/>
+                                    <outlet property="sectionScoresLabel" destination="ZLh-0r-tYi" id="mlF-1i-1N2"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
