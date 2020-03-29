@@ -16,15 +16,14 @@
 		FA10347D23FEF59200E6D479 /* TrialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10347C23FEF59200E6D479 /* TrialTableViewCell.swift */; };
 		FA10348123FEF5F200E6D479 /* TrialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */; };
 		FA30713024167DF100991E32 /* ResultTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */; };
+		FA5AEEBC24312C6900B0744B /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5AEEBB24312C6900B0744B /* CollectionViewController.swift */; };
 		FA6B26BB242B797600A7A2D8 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B26BA242B797600A7A2D8 /* HeaderTableViewCell.swift */; };
-		FA769839242FC15200EFEEA2 /* DetailCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA769838242FC15100EFEEA2 /* DetailCollectionViewController.swift */; };
 		FA9B3AA22421F96000E99A13 /* GroupedSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B3AA12421F96000E99A13 /* GroupedSection.swift */; };
 		FAEA38452405AF5D0049C254 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38442405AF5D0049C254 /* Result.swift */; };
 		FAEA38472405AFA60049C254 /* Trial.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38462405AFA60049C254 /* Trial.swift */; };
 		FAEA38492405AFE30049C254 /* CourseCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA38482405AFE30049C254 /* CourseCount.swift */; };
 		FAEA384C2405B20A0049C254 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA384B2405B20A0049C254 /* ResultTableViewCell.swift */; };
 		FAEA384E2405B9F20049C254 /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEA384D2405B9F20049C254 /* ResultTableViewController.swift */; };
-		FAFD42A6242F59C700D4D307 /* ResultDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD42A5242F59C700D4D307 /* ResultDetailViewController.swift */; };
 		FAFD42AA2430C85500D4D307 /* SectionScoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD42A92430C85500D4D307 /* SectionScoreCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,8 +51,8 @@
 		FA10347C23FEF59200E6D479 /* TrialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialTableViewCell.swift; sourceTree = "<group>"; };
 		FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialTableViewController.swift; sourceTree = "<group>"; };
 		FA30712F24167DF100991E32 /* ResultTableHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableHeaderCell.swift; sourceTree = "<group>"; };
+		FA5AEEBB24312C6900B0744B /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		FA6B26BA242B797600A7A2D8 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
-		FA769838242FC15100EFEEA2 /* DetailCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewController.swift; sourceTree = "<group>"; };
 		FA783250241E278B002E701A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = TrialMonster/README.md; sourceTree = SOURCE_ROOT; };
 		FA9B3AA12421F96000E99A13 /* GroupedSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedSection.swift; sourceTree = "<group>"; };
 		FAD634B72414F46F00D45DC7 /* TrialMonster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TrialMonster.entitlements; sourceTree = "<group>"; };
@@ -62,7 +61,6 @@
 		FAEA38482405AFE30049C254 /* CourseCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCount.swift; sourceTree = "<group>"; };
 		FAEA384B2405B20A0049C254 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		FAEA384D2405B9F20049C254 /* ResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
-		FAFD42A5242F59C700D4D307 /* ResultDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailViewController.swift; sourceTree = "<group>"; };
 		FAFD42A92430C85500D4D307 /* SectionScoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionScoreCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,8 +130,7 @@
 		FA76983A242FC28E00EFEEA2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA769838242FC15100EFEEA2 /* DetailCollectionViewController.swift */,
-				FAFD42A5242F59C700D4D307 /* ResultDetailViewController.swift */,
+				FA5AEEBB24312C6900B0744B /* CollectionViewController.swift */,
 				FAEA384D2405B9F20049C254 /* ResultTableViewController.swift */,
 				FA10348023FEF5F200E6D479 /* TrialTableViewController.swift */,
 			);
@@ -266,10 +263,9 @@
 			files = (
 				FAEA38472405AFA60049C254 /* Trial.swift in Sources */,
 				FA10348123FEF5F200E6D479 /* TrialTableViewController.swift in Sources */,
-				FAFD42A6242F59C700D4D307 /* ResultDetailViewController.swift in Sources */,
 				FAEA384E2405B9F20049C254 /* ResultTableViewController.swift in Sources */,
 				FA30713024167DF100991E32 /* ResultTableHeaderCell.swift in Sources */,
-				FA769839242FC15200EFEEA2 /* DetailCollectionViewController.swift in Sources */,
+				FA5AEEBC24312C6900B0744B /* CollectionViewController.swift in Sources */,
 				FAFD42AA2430C85500D4D307 /* SectionScoreCollectionViewCell.swift in Sources */,
 				FA10345723FECDFB00E6D479 /* AppDelegate.swift in Sources */,
 				FA10347D23FEF59200E6D479 /* TrialTableViewCell.swift in Sources */,

@@ -207,8 +207,8 @@ class ResultTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        
-        guard let DetailCollectionViewController = segue.destination as? DetailCollectionViewController else {
+      
+        guard let CollectionViewController = segue.destination as? CollectionViewController else {
             fatalError("Unexpected destination: \(segue.destination)")
         }
         
@@ -221,7 +221,8 @@ class ResultTableViewController: UITableViewController {
         }
         let section = self.sections[indexPath.section]
         let result = section.rows[indexPath.row]
-        DetailCollectionViewController.result = result
-        DetailCollectionViewController.trial = trial
+   //    DetailCollectionViewController.result = result
+   //     DetailCollectionViewController.trial = trial
+ 
     }
 }
