@@ -140,7 +140,7 @@
                         </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultTableViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-rt-nJf" customClass="ResultTableViewCell" customModule="TrialMonster" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="155.5" width="375" height="43"/>
+                                <rect key="frame" x="0.0" y="156" width="375" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1kh-rt-nJf" id="9CK-WJ-HbW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -495,13 +495,13 @@
                         <color key="backgroundColor" name="Background"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vkg-lc-m0O">
                             <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
-                            <size key="footerReferenceSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7cc-lW-fDH">
-                                <rect key="frame" x="0.0" y="50" width="128" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uUu-yF-uc0">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -517,17 +517,23 @@
                                     </subviews>
                                 </collectionViewCellContentView>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="T6i-Jl-SRU">
+                                <rect key="frame" x="247" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rhm-Yn-4A1">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dSF-pA-7rx">
+                                <rect key="frame" x="0.0" y="138" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rAw-Df-mUg">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ACN-uM-Vet">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <color key="backgroundColor" name="Text"/>
-                        </collectionReusableView>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Oi-SQ-pwI">
-                            <rect key="frame" x="0.0" y="178" width="375" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <color key="backgroundColor" name="Text"/>
-                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="fc2-4X-wzG" id="R3f-I7-sKf"/>
                             <outlet property="delegate" destination="fc2-4X-wzG" id="Got-hW-aCT"/>
@@ -537,7 +543,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wE5-SO-L4g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="-147"/>
+            <point key="canvasLocation" x="1584.8" y="-147.07646176911544"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UUp-MH-hEa">

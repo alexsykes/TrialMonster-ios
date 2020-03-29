@@ -11,6 +11,8 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class DetailCollectionViewController: UICollectionViewController {
+    @IBOutlet weak var courseLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     
     var result: Result?
@@ -33,7 +35,7 @@ class DetailCollectionViewController: UICollectionViewController {
         numTrialSections = trial?.numsections
         numLaps = trial?.numlaps
         
-        let sectionScores = scores?.split(by: numLaps!)
+       // let sectionScores = scores?.split(by: numLaps!)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
