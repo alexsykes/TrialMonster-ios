@@ -11,8 +11,7 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController {
-    
-    var modelData = ["Alex", "Hanan","Laura","Emily"]
+    //MARK: variables
     var result: Result!
     var trial: Trial!
     var numLaps: Int!
@@ -21,6 +20,8 @@ class CollectionViewController: UICollectionViewController {
     var scores: String?
     
     var sectionScoreArray: [String] = []
+    
+    //MARK: Outlets
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,6 +111,42 @@ class CollectionViewController: UICollectionViewController {
      }
      */
     
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        // 1
+        switch kind {
+        // 2
+        case UICollectionView.elementKindSectionHeader:
+            //3
+            guard
+                let headerView = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind,
+                    withReuseIdentifier: "\(HeaderCollectionReusableView.self)",
+                    for: indexPath) as? HeaderCollectionReusableView
+                else {
+                    fatalError("Invalid view type")
+            }
+            let name: String = result.name
+            let number: String = result.rider
+            var course: String = result.course
+            let classs: String = result.classs
+            let machine: String = result.machine
+            
+            if (classs != "") {
+                course = course + " - " + classs
+            }
+            
+            headerView.nameLabel.text = number + " - " + name
+            headerView.courseLabel.text = course
+            headerView.machineLabel.text = machine
+            
+            return headerView
+        default:
+            // 4
+            assert(false, "Invalid element type")
+        
+        }
+    }
     
     
 }
